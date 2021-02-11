@@ -1,0 +1,453 @@
+<!DOCTYPE html>
+<html lang="ja">
+  <head>
+    <meta charset="UTF-8">
+    <title>hoge</title>
+    <style>
+
+      /* ----------------- ページ全体の設定 ----------------- */
+      body {
+
+        background-color : #02173C;        /* 背景色：瑠璃色 */
+        background-image : url( "hoge" );  /* 背景画像 */
+        background-position : top center;  /* 背景画像の位置 */
+        background-repeat : no-repeat;     /* 背景画像のリピート */
+        background-attachment : fixed;     /* スクロール時の背景画像を固定 */
+        background-size : cover;           /* 画面全体に表示 */
+
+        color : #E5B217;                   /* 文字色 金色ラブリッチェ */
+        font-family : "SourceHanCodeJP-Light", sans-serif, monospace, serif;
+        /* text-align : center;               /* 中央揃え */
+        counter-reset: sheet;
+      }
+
+      div.htmlWrap {
+
+        /* border : solid 1px red; */
+        margin : auto;
+        width : 85%;
+        padding : 1em;
+        font-size : 10.5pt;
+        /*text-align: center;*/
+      }
+
+      div.header {
+
+        text-align : center;
+      }
+      div.header div.date {
+
+        text-align : right;
+      }
+
+
+      div.body {
+      }
+
+      div.body div.auther {
+
+        text-align : right;
+      }
+
+      div.body div.grand.title {
+
+        text-align : center;
+      }
+
+      div.body ol.chapter li.purpose::marker,
+      div.body ol.chapter li.purpose div.title,
+      div.body ol.chapter li.summary::marker,
+      div.body ol.chapter li.summary div.title,
+      div.body ol.chapter li.principle::marker,
+      div.body ol.chapter li.principle div.title,
+      div.body ol.chapter li.practice::marker,
+      div.body ol.chapter li.practice div.title,
+      div.body ol.chapter li.consideration::marker,
+      div.body ol.chapter li.consideration div.title,
+      div.body ol.chapter li.reference::marker,
+      div.body ol.chapter li.reference div.title {
+
+        font-weight : bold;
+        font-size : 1.15em;
+      }
+      div.body ol.chapter li.purpose div.title,
+      div.body ol.chapter li.summary div.title,
+      div.body ol.chapter li.principle div.title,
+      div.body ol.chapter li.practice div.title:not(.section div.title),
+      div.body ol.chapter li.consideration div.title,
+      div.body ol.chapter li.reference div.title {
+
+        display : inline-block;
+        border-bottom : solid 1px #888888;
+        width : 17%;
+      }
+      div.body ol.chapter li.practice div.title:not(.subsection div.title) {
+
+        display : inline-block;
+        border-bottom : solid 1px #888888;
+      }
+      div.body ol.chapter li.practice ol.section div.title ol {
+
+        border : none;
+        width : 100%;
+      }
+
+      div.body ol.chapter li.practice ol.section li::marker,
+      div.body ol.chapter li.practice ol.section li div.title {
+
+        font-weight : bold;
+        font-size : 1em;
+      }
+      div.body ol.chapter li.practice ol.section li div.contents ol.subsection li div.title span.subtitle {
+
+        font-weight : normal;
+        margin-left : 1em;
+      }
+
+      div.body ol.chapter li.principle div.contents ol li,
+      div.body ol.chapter li.practice ol.section li div.contents ol.subsection,
+      div.body ol.chapter li.practice ol.section li div.contents ol.subsection li div.contents {
+
+        text-indent : 0em;
+      };
+      div.body ol.chapter li.practice ol.section li div.contents ol.subsection li::marker,
+      div.body ol.chapter li.practice ol.section li div.contents ol.subsection li div.title {
+
+        font-weight : normal;
+        font-size : 1em;
+      }
+
+      div.body ol.chapter li.purpose div.contents,
+      div.body ol.chapter li.summary div.contents,
+      div.body ol.chapter li.principle div.contents,
+      div.body ol.chapter li.practice div.contents,
+      div.body ol.chapter li.consideration div.contents {
+
+        text-indent : 1em;
+      }
+      div.body ol.chapter li div.contents p {
+
+        margin : 0.5em auto 0.5em auto;
+      }
+
+      div.body ol.chapter li.practice ol.section li {
+
+        margin : 0.5em auto auto auto;
+      }
+      div.body ol.chapter li.practice ol.section li div.contents ol.subsection li div.contents figure {
+
+        margin : 1em auto 1em auto;
+      }
+
+      div.body ol.chapter li.reference div.contents ul {
+
+        margin : 0.5em auto auto auto;
+      }
+
+
+      div.footer {
+      }
+
+
+      div.pagebreak {
+
+        /* position : absolute; */
+        break-after : page;
+        /* bottom : 0;
+        right : auto;
+        counter-increment: sheet; */
+        /* content: "ページ " counter(sheet); */
+      }
+      @media print {
+
+        body {
+
+          background : none;
+          background-color : white;
+        }
+
+        div.htmlWrap {
+
+          background : none;
+          color : black;
+        }
+      }
+
+    </style>
+  </head>
+
+  <body>
+    <div class="htmlWrap">
+      <div class="header">
+        <div class="date"></div>
+      </div>
+
+      <div class="body">
+        <div class="auther">
+          機械CAD設計科 200795 佐々木洋輔
+        </div>
+        <div class="grand title">
+          <h1>エンジンの分解組立実習</h1>
+        </div>
+        <ol class="chapter">
+          <li class="purpose">
+            <div class="title">目的</div>
+            <div class="contents">
+              <p>ガソリンエンジンの分解を行い，エンジンの内部構造や各部品の役割を理解する．また，エンジンの組み立てを行い，機械構造物の仕組みを理解することと共に機械構造物の組み立て技術の習得を目的とする．</p>
+            </div>
+          </li>
+          <li class="summary">
+            <div class="title">概要</div>
+            <div class="contents">
+              <p>内燃機関は機関内部で燃料を燃焼させて発生した高温，高圧ガスをピストン等に作用させて動力を得る機械である．燃料の燃焼による熱エネルギーを機械的エネルギーに変換する機械を熱機関といい，中でも，動力に直接変換する機械を内燃機関という．</p>
+              <p>ピストン機関は，シリンダ内を往復運動するピストンの動きをコネクティングロッドを介してクランクシャフトの回転運動に変換する．クランク機構で回転力の発生しない点を「死点」といい，ピストン可動域の中で最も高い位置を「上死点」，最も低い位置を「下死点」という．また，上死点から下死点へ移動するときの容積を排気量ともいい，行程容積×シリンダ総数で総排気量を産出する．自動車の排気量といった場合には一般的に総排気量のことを指す．</p>
+            </div>
+          </li>
+          <li class="principle">
+            <div class="title">原理</div>
+            <div class="contents">
+              <p>内燃機関の中でも最も身近なガソリン機関は自動車やオートバイのみならず，農産業用の動力発生用の原動機として広く利用されている．ガソリン機関はガソリンを燃料とし空気との混合気をシリンダ内で圧縮し電気火花で点火，燃焼させ燃焼ガスの膨張力でピストンを動かし，クランクシャフトを回転させる火花点火機関である．一般的な自動車にはガソリンの混合気の吸い込みから燃焼ガスの排出まで，吸気，圧縮，膨張，排気の4行程を1サイクルとする4サイクルガソリン機関が多く使用されている．4サイクルエンジンの各行程の詳細は以下の通り．</p>
+              <ol class="section">
+                <li>
+                  吸気行程<br>
+                  排気弁を閉じて吸気弁を開きピストンが上死点から下死点に移動する間にシリンダ内部に混合気を吸い込む．クランクシャフトは半回転する．
+                </li>
+                <li>
+                  圧縮行程<br>
+                  吸気弁を閉じ，ピストンが下死点から上昇する．シリンダ内の混合気は圧縮され，圧力，温度が上昇する．クランクシャフトは半回転する．
+                </li>
+                <li>
+                  膨張行程<br>
+                  ピストンが上死点付近に達し点火プラグの電気火花で点火する．混合気は爆発的に燃焼し高温，高圧のガスになり，膨張するとともにピストンを押し下げて動力を発生させる．クランクシャフトは半回転する．
+                </li>
+                <li>
+                  排気工程<br>
+                  ピストンが下死点に近づき，排気弁を開く．ピストンが下死点から上昇するとともに燃焼ガスはシリンダの外に排出され，ピストンが上死点に達すると排気工程完了となる．クランクシャフトは半回転する．
+                </li>
+              </ol>
+              <p>以上の4行程で1サイクルが完了し，ピストンが2往復する間にクランクシャフトは2回転する．</p>
+            </div>
+          </li>
+          <li class="practice">
+            <div class="title">実習</div>
+            <div class="contents">
+              <p>
+                今回の実習は花壇自動車大学校で2月3日から2月4日の日程で行われ，1日目にはガソリンエンジンの分解を行い，2日目に1日目に分解したエンジンを組み立てた．実習にはトヨタ・プリウスやトヨタ・VOXYなどの一般の自動車にも搭載されているトヨタ製1.8L直列4気筒ガソリンエンジンを使用した．以下では2日間に行った実習の内容について示す．
+              </p>
+            </div>
+            <div class="pagebreak"></div>
+            <ol class="section">
+              <li>
+                <div class="title">分解実習</div>
+                <div class="contents">
+                  <ol class="subsection">
+                    <li>
+                      <div class="title">エアクリーナー，マニホールドの取り外し</div>
+                      <div class="contents">
+                        <p>
+                        エアクリーナー，マニホールドなどのエンジン本体の付随品を取り外す．エアクリーナーは，エンジン外部から吸気する際の空気の汚れを取り除く装置であり，エンジン最後部に設置されている．また，マニホールドには，エンジンの吸気側に付属するインテークマニホールドと排気側に付属するエキゾーストマニホールドがあり，吸気側はエンジン内部（燃焼室）に吸気する空気を複数のシリンダに分配する役割をもち，排気側は燃焼室からの排気を1経路にまとめる役割を持っている．燃焼室からは高温のガスが廃棄されるため，一般には鋳鉄やステンレス鋼などの材質でできている．fig<span class="figNum"></span>に分解前のインテークマニホールドを示す．
+                          <figure>
+                            <img src="doc/pictures/intakeManifold_sqCut.jpg" width="210px" height="210px">
+                            <figcaption>fig<span class="figNum"></span>. インテークマニホールド</figcaption>
+                          </figure>
+                        </p>
+                      </div>
+                    </li>
+                    <li>
+                      <div class="title">ファンベルトとその周辺部の取り外し</div>
+                      <div class="contents">
+                        <p>
+                          エンジンのファンベルトやプーリーを取り外す．その後，オルタネーター，ウォーターポンプ，エアコンコンプレッサなどエンジン付随品の中でも主要な部品を取り外す．ファンベルトはオルタネーターやウォーターポンプ，エアコンコンプレッサなどにクランクシャフトの動力を伝えるゴム製のベルトである．各部品への動力伝達は各部品のプーリーを介して伝達される．
+                          オルタネーターは発電機の役割を持っており，発電した電力はバッテリーに蓄えられる．バッテリーを電源として，エンジン始動時にスターターと呼ばれるモーターを回転させエンジンをかけたり，エアコンなどの各種室内電装設備を実現している．
+                          fig<span class="figNum"></span>にファンベルトによって動力が伝達される各部品と位置を示す．
+                          <figure>
+                            <img src="doc/pictures/around-fanBelt.png" width="270px" height="230px">
+                            <figcaption>fig<span class="figNum"></span>. ファンベルト周辺部品</figcaption>
+                          </figure>
+                        </p>
+                      </div>
+                    </li>
+                    <li>
+                      <div class="title">イグニッションコイル，スパークプラグの取り外し</div>
+                      <div class="contents">
+                        <p>
+                          エンジン本体の分解に入る．まず，エンジンの各部に接続されているワイヤハーネスを取り外す．次に，イグニッションコイル，スパークプラグの順に取り外す．この際，スパークプラグのネジ部以外は陶器でできている部分があり，他の部品よりも破損しやすいため，慎重に作業を行う．fig<span class="figNum"></span>に取り外したイグニッションコイルとスパークプラグを示す．
+                          <figure>
+                            <img src="doc/pictures/ignitionL-sparkPlug.png" width="300px" height="200px">
+                            <figcaption>fig<span class="figNum"></span>. イグニッションコイルとスパークプラグ</figcaption>
+                          </figure>
+                        </p>
+                      </div>
+                    </li>
+                    <div class="pagebreak"></div>
+                    <li>
+                      <div class="title">カムシャフトの取り外し</div>
+                      <div class="contents">
+                        <p>
+                          エンジン上部から分解していく．シリンダヘッドカバーを外し，タイミングチェーンカバーを外す．
+                          次に，チェーンガイドとともにタイミングチェーンをカムシャフトから外す．その後，5本のカムシャフトハウジングを取り外すが，カムシャフトの反りなどの変形，破損を防止するため，できるだけ全てのカムシャフトハウジングが均等に緩むように少しずつボルトを緩めていく．
+                          カムシャフトを取り外す．カムシャフトは2本あり，エンジンの左右側で一部の形状が異なっているため，組み付け時に間違わないように仮置きしておく．カムシャフトの役割としては，シリンダバルブを開閉させることにあり，ピストンの動きに合わせてタイミングよくバルブを開閉させる．クランクシャフトが1回転する間に2回転し，バルブの接点になる場所は円形ではなく尖った形をしている．fig<span class="figNum"></span>に取り外したカムシャフトを示す．
+                          <figure>
+                            <img src="doc/pictures/camshaft_cut.jpg" width="300px" height="150px">
+                            <figcaption>fig<span class="figNum"></span>. カムシャフト</figcaption>
+                          </figure>
+                        </p>
+                      </div>
+                    </li>
+                    <li>
+                      <div class="title">オイルパン，オイルポンプの取り外し</div>
+                      <div class="contents">
+                        <p>
+                          シリンダヘッド，ガスケットを取り外す．また，エンジン下部より，オイルパン，オイルポンプを取り外す．オイルパンはエンジンオイルを溜めておく役割があり，その付近にオイルポンプが設置されている．また，オイルポンプはエンジン内部にオイルを循環させる役割をもち，オイル吸入口にはオイルストレーナーと呼ばれる濾過機が付随している．
+                          シリンダブロック下部にはクランクシャフトが見える．ピストンへはコネクティングロッドを介して連節されており，ピストンの往復運動によって回転する．
+                          fig<span class="figNum"></span>にエンジン下部からクランクシャフトを見た図を示す．
+                          <figure>
+                            <img src="doc/pictures/engineUnder-NonUnderCover_sqCut.jpg" width="200px" height="200px">
+                            <figcaption>fig<span class="figNum"></span>. エンジン下部から見たシリンダブロック</figcaption>
+                          </figure>
+                        </p>
+                      </div>
+                    </li>
+                    <li>
+                      <div class="title">ピストンの取り外し</div>
+                      <div class="contents">
+                        <p>
+                          ピストンをシリンダブロックから取り外す．ピストンはコネクティングロッドと共に取り外す必要があり，まずは，コネクティングロッドをクランクシャフトから取り外す．その後，エンジン下部のクランクシャフト側からコネクティングロッドを押し出すようにして取り外す．
+                          fig<span class="figNum"></span>に取り外したピストンを例に各部の名称を示す．
+                          <figure>
+                            <img src="doc/pictures/pistonDescription.png" width="230px" height="200px">
+                            <figcaption>fig<span class="figNum"></span>. ピストンとコネクティングロッド各部名称</figcaption>
+                          </figure>
+                        </p>
+                      </div>
+                    </li>
+                  </ol>
+                  <p>
+                    以上が1日目の分解実習内容である．
+                  </p>
+                </div>
+              </li>
+              <div class="pagebreak"></div>
+              <li>
+                <div class="title">組立実習</div>
+                <div class="contents">
+                  <ol class="subsection">
+                    <li>
+                      <div class="title">ピストンの組み付け</div>
+                      <div class="contents">
+                        <p>
+                          ピストンブロックにピストンを組み付ける．組み付ける際は，エンジン上部側よりコネクティングロッドを先にシリンダ内部に挿入する．各シリンダとピストンは組み合わせが決まっており，分解時と同じ組み合わせになるように組み付ける．また，組み付ける向きも決まっているため，ピストンを押し込む人と向きをエンジン下部側から確認する人の2人1組みで作業を行う．
+                          キャップのボルトを閉める際にはトルクレンチを使用し，キャップの両ボルトで締めの力に差が出ないように徐々に締め付ける．
+                        </p>
+                      </div>
+                    </li>
+                    <li>
+                      <div class="title">オイルポンプ，オイルパン，シリンダヘッドの組み付け</div>
+                      <div class="contents">
+                        <p>
+                          オイルポンプ，オイルパンの順に組み付ける．次にエンジン上部にシリンダヘッドを組み付ける．ボルトを締める際は，内側のボルトから締め始め，完全に締め切るまでに2〜3周程度すると良い．
+                        </p>
+                      </div>
+                    </li>
+                    <li>
+                      <div class="title">カムシャフトの組み付け</div>
+                      <div class="contents">
+                        <p>
+                          カムシャフトを組み付ける．組み付ける際には，カムシャフトの初期位置に注意する．エンジンは分解，組立する際にはピストンの位置が決まっており，ピストンの位置とカムシャフトの回転角が対応するように設計されている．誤って取り付けた場合，ピストンの動きとバルブの開閉のタイミングが合わずバルブやピストンの損傷に繋がる．
+                        </p>
+                      </div>
+                    </li>
+                    <li>
+                      <div class="title">タイミングチェーンの組み付け</div>
+                      <div class="contents">
+                        <p>
+                          タイミングチェーンを組み付ける．タイミングチェーンには初期位置があり，組み付ける際に色のついた外プレートとスプロケットの所定の位置を合わせて組み付ける必要がある．複数箇所の外プレートが着色されている場合はそれら全てを所定のスプロケット位置に組み付ける．
+                          次に，テンショナーやガイドを組み付け，タイミングチェーンカバーを取り付ける．その後，テンショナーを機能させ，クランクシャフトを回し，タイミングチェーンの歯飛びやはずれがないか確認する．
+                        </p>
+                      </div>
+                    </li>
+                    <li>
+                      <div class="title">オルタネーター，ウォーターポンプ，エアコンコンプレッサの取り付け</div>
+                      <div class="contents">
+                        <p>
+                          分解時と逆の手順で組み付ける．オルタネーターやエアコンコンプレッサなどの部品は重量があるため，組み付け時には2人で行うと作業しやすい．また，1つの部品を固定するために，複数種類のボルトが使用されているため，ボルトと穴の対応を誤らないよう注意する．
+                          次にプーリーを取り付け，ファンベルトを組み付ける．ファンベルトの組み付けの際にはベルトとプーリーの山谷を合わせ，溝のないプーリーはベルトの平らな面が当たるように組み付ける．
+                        </p>
+                      </div>
+                    </li>
+                    <li>
+                      <div class="title">マニホールド，エアクリーナーの組み付け</div>
+                      <div class="contents">
+                        <p>
+                          インテークマニホールド，エキゾーストマニホールド，エアクリーナーを組み付ける．今回の実習ではエキゾーストマニホールドは大きな部品であり，固定箇所もエンジン側とマフラー側の2箇所あるため，複数人で作業を行う．
+                          最後に，ワイヤーハーネスを所定箇所に接続し，エンジンの組立完了である．
+                        </p>
+                      </div>
+                    </li>
+                  </ol>
+                  <p>
+                    以上が2日目の組立実習内容である．
+                  </p>
+                </div>
+              </li>
+            </ol>
+          </li>
+          <li class="consideration">
+            <div class="title">実習の感想</div>
+            <div class="contents">
+              <p>
+                今回の実習では，一般的な直列4気筒エンジンの分解，組立を行った．エンジンがなぜ駆動するか原理は知っており，内部構造も教科書や模型等で見たこともあった．それまでのエンジン内部のイメージは，もっと複雑で部品点数もかなり多いと考えていた．
+                しかし，実際に分解してみると複雑な部分もあるが，それ以上にエンジンを構成する部品の精度が非常に高く，特に組み付け時のカムシャフトの位置やタイミングチェーンの位置まで決まっていることがわかり，その精密さに驚いた．この精密さが「一般の人でも手に入れられる最高の機械」と言われる所以である．
+              </p>
+            </div>
+          </li>
+          <li class="reference">
+            <div class="title">参考文献</div>
+            <div class="contents">
+              <ul>
+                <li>
+                  <cite>小町弘・吉田裕亮・金野祥久・櫻井美千代（2019）「絵とき機械工学のやさしい知識」オーム社．</cite>
+                </li>
+              </ul>
+            </div>
+          </li>
+        </ol>
+      </div>
+
+      <div class="footer">
+      </div>
+
+      <div class="pagebreak"></div>
+    </div>  <!-- htmlWrap -->
+
+    <script>
+      window.addEventListener ( "load", init, false );
+
+      function init () {
+
+        setDate ();
+        set_figNum ();
+      }
+      function setDate () {
+
+        let today = new Date ();
+        let dom_div_date = document.querySelector ( "div.date" );
+        dom_div_date.innerHTML = today.getFullYear () + "年" + Number ( today.getMonth () + 1 ) + "月" + today.getDate () + "日";
+      }
+
+      function set_figNum () {
+
+        let dom_span_figNum = document.querySelectorAll ( "span.figNum" );
+        let figNum = 1;
+        for ( let i = 0; i < dom_span_figNum.length;) {
+
+          dom_span_figNum [ i ].innerHTML = figNum;
+          dom_span_figNum [ i + 1 ].innerHTML = figNum;
+
+          i = i + 2;
+          figNum++;
+        }
+      }
+    </script>
+  </body>
+</html>
